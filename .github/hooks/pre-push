@@ -1,0 +1,8 @@
+#!/bin/sh
+
+branch="$(git symbolic-ref --short HEAD)"
+
+if [ "$branch" = "master" ]; then
+  echo "🚫 Direct pushes to master are not allowed!"
+  exit 1
+fi

@@ -1,0 +1,38 @@
+ip: 192.168.10.10
+memory: 6144
+cpus: 2
+provider: virtualbox
+authorize: [PATH]/id_rsa.pub
+keys:
+    - [PATH]/id_rsa
+folders:
+    -
+        map: [PATH]/barefootbridal
+        to: /home/vagrant/code
+sites:
+    -
+        map: barefootbridal.test
+        to: /home/vagrant/code/public
+    -
+        map: api.barefootbridal.test
+        to: /home/vagrant/code/public
+    -
+        map: auth.barefootbridal.test
+        to: /home/vagrant/code/public
+    -
+        map: couples.barefootbridal.test
+        to: /home/vagrant/code/public
+    -
+        map: dashboard.barefootbridal.test
+        to: /home/vagrant/code/public
+databases:
+    - barefootbridal
+features:
+    -
+        mysql: true
+    -
+        ohmyzsh: true
+    -
+        docker: true
+name: barefootbridal
+hostname: barefootbridal

@@ -1,0 +1,38 @@
+// Variables
+@import "variables";
+
+// Bulma
+$card-header-background-color: $primary;
+@import "~bulma/sass/components/card";
+
+$input-focus-border-color: $grey-light;
+$input-focus-box-shadow-color: rgba($grey-light, 0.25);
+@import "~bulma/sass/form/_all";
+
+.auth-container {
+    min-height: 100vh;
+}
+
+.auth-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    .auth-background-glass {
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+.card {
+    overflow: hidden;
+    border-radius: 10px;
+
+    .card-header {
+        justify-content: center;
+        align-items: center;
+    }
+}

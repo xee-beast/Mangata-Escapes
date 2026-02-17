@@ -1,0 +1,104 @@
+@import "~bulma/sass/utilities/initial-variables.sass";
+@import "~bulma/sass/utilities/functions.sass";
+
+$family-sans-serif: "Josefin Sans", sans-serif;
+
+$primary: hsl(340, 15%, 88%);
+$secondary: #495057;
+
+$size-1: 3.25rem;
+$size-2: 2.25rem;
+$size-3: 2rem;
+$size-4: 1.375rem;
+$size-5: 1.125rem;
+$size-6: 1rem;
+$size-7: 0.75rem;
+
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+$body-font-size: 1.125em;
+$body-weight: $weight-light;
+$body-line-height: 1.25;
+
+$text: $black;
+
+@import "~bulma/sass/utilities/derived-variables.sass";
+@import "~bulma/sass/utilities/animations.sass";
+@import "~bulma/sass/utilities/mixins.sass";
+@import "~bulma/sass/utilities/controls.sass";
+
+// Navbar
+$navbar-background-color: transparent;
+$navbar-height: 4rem;
+$navbar-padding-horizontal: 5rem;
+$navbar-padding-vertical: 0;
+$navbar-item-color: $white;
+$navbar-item-hover-color: $grey-lightest;
+$navbar-item-active-color: $primary;
+$navbar-item-img-max-height: 1.5rem;
+$navbar-dropdown-background-color: rgba($grey-dark, 0.75);
+$navbar-dropdown-border-top: 4px solid $navbar-dropdown-background-color;
+$navbar-dropdown-item-hover-color: $navbar-item-hover-color;
+$navbar-dropdown-item-hover-background-color: transparent;
+$navbar-dropdown-item-active-color: $navbar-item-active-color;
+$navbar-dropdown-item-active-background-color: $navbar-dropdown-item-hover-background-color;
+$navbar-breakpoint: $tablet;
+
+//colors
+$charcoal: #3C3B3B;
+$porcelain: #E7E0DA;
+$dusty-rose: #C7979C;
+$mauve: #995C64;
+$alabaster: #F7F5F4;
+$sandstone: #D5B9AE;
+$soft-beige: #E7E0DA;
+$warm-gray: #F2EEED;
+$white: #FFFFFF;
+$navbar-text-heading-hover-color: #a7a5a5;
+
+// Title
+$title-color: $white;
+$title-size: $size-1;
+$title-weight: $weight-light;
+$subtitle-size: $size-3;
+$subtitle-weight: $weight-light;
+
+// Section
+$section-padding-medium: 6.25rem 1.5rem;
+$section-padding-large: 12rem 1.5rem;
+
+// Hero
+$hero-body-padding-medium: 6.25rem 1.5rem;
+$hero-body-padding-large: 12rem 1.5rem;
+
+// Icon
+$icon-dimensions-medium	: 2.5rem;
+
+// Form
+$control-radius: 0;
+$label-weight: $weight-normal;
+
+// Booking Details Modal Colors
+$booking-text-color: #363636;
+$booking-dark-text: #443B3B;
+$booking-header-bg: #E5D5D0;
+$booking-title-bg: #F7F5F4;
+$booking-table-header-bg: #C7979C;
+$booking-row-even-bg: #E7E0DA;
+$booking-row-odd-bg: #F7F5F4;
+$booking-pending-color: #C7979C;
+$booking-warning-color: #f5a623;
+$booking-cancelled-color: #d32f2f;
+$booking-white: #fff;
+$booking-modal-header-bg: #4a4a4a;
+$booking-border-color: #e5e5e5;
+$booking-input-border: #dbdbdb;
+$booking-footer-bg: #f5f5f5;
+$booking-footer-border: #ddd;
+$booking-muted-text: #999;
+$booking-secondary-text: #6c757d;
+$booking-label-help: #7a7a7a;
+$booking-error-color: #f14668;
+$booking-button-hover: #292929;
+$booking-input-focus-shadow: rgba(199, 151, 156, 0.25);

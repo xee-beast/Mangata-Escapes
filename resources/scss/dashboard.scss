@@ -1,0 +1,585 @@
+// Variables
+@import "variables";
+
+// Font Face Declarations
+@font-face {
+    font-family: 'Adore Calligraphy';
+    src: url('/fonts/Adore.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ivypresto Display';
+    src: url('/fonts/IvyprestoDisplay-Light.otf') format('opentype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins Light';
+    src: url('/fonts/Poppins-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+// Global Styles
+body {
+    background-color: $alabaster !important;
+    font-family: $font-poppins-light;
+    color: $charcoal;
+}
+
+// Bulma
+@import "~bulma/sass/components/breadcrumb";
+@import "~bulma/sass/components/card";
+@import "~bulma/sass/components/dropdown";
+@import "~bulma/sass/components/menu";
+@import "~bulma/sass/components/message";
+@import "~bulma/sass/components/modal";
+@import "~bulma/sass/components/navbar";
+@import "~bulma/sass/components/pagination";
+@import "~bulma/sass/components/tabs";
+@import "~bulma/sass/elements/other";
+@import "~bulma/sass/elements/progress";
+@import "~bulma/sass/elements/table";
+@import "~bulma/sass/elements/tag";
+@import "~bulma/sass/form/_all";
+@import "~bulma/sass/utilities/animations";
+
+@import "~quill/dist/quill.snow";
+
+td.has-html {
+    padding: 0;
+
+    .content {
+        padding: 0.5em 0.75em;
+        max-height: 500px;
+        overflow-y: auto;
+    }
+}
+
+.field {
+    .control {
+        flex-grow: 1;
+
+        .select {
+            width: 100%;
+
+            select {
+                width: 100%;
+            }
+        }
+    }
+
+    &.has-addons {
+        .control:last-child {
+            flex: none;
+        }
+    }
+}
+
+.is-required {
+    &::after {
+        content: "*";
+        color: $mauve;
+        margin-left: 0.25rem;
+    }
+}
+
+.filters {
+    margin-bottom: 0.5rem;
+
+    &.columns {
+        .column {
+            padding-top: 0;
+        }
+    }
+}
+
+.columns.in-form {
+    margin-bottom: 0;
+}
+
+.notification-counter {
+    display: block;
+    position: absolute;
+    top: -0.25rem;
+    right: -0.25rem;
+    height: 1.25rem;
+    width: 1.25rem;
+    text-align: center;
+    vertical-align: middle;
+    background-color: $charcoal;
+    color: $alabaster !important;
+    border-radius: 50%;
+
+    &.is-text {
+        display: inline-block;
+        margin: 0 0.25rem;
+        position: initial;
+    }
+}
+
+.has-background-danger-light {
+    background-color: hsl(347, 90%, 96%);
+}
+
+.has-background-success-light {
+    background-color: hsl(142, 52%, 96%);
+}
+
+td.has-nested-table {
+    border: none;
+    border-width: 0;
+    padding: 0;
+}
+
+.deleted {
+    color: #18171738;
+
+    .label {
+        color: #18171738;
+    }
+
+    .disabled {
+        color: #18171738;
+
+        select {
+            color: #18171738;
+        }
+    }
+}
+
+.card-header-title {
+    font-family: $font-adore;
+    font-size: 22px;
+    font-weight: 600;
+    color: $charcoal !important;
+}
+
+.sub-label {
+    label {
+        font-weight: inherit;
+    }
+}
+
+.align-self-last-baseline {
+    align-self: last baseline;
+}
+
+.group-airport-section {
+    background-color: $alabaster;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.navbar .navbar-brand .brand.navbar-item {
+    max-height: 60px;
+}
+
+.hidden {
+    display: none;
+}
+button.button.is-primary.is-inverted.is-outlined,
+a.button,
+.button {
+    background-color: $dusty-rose !important;
+    color: $charcoal !important;
+    border-color: $charcoal !important;
+
+    i,
+    .icon,
+    .fas,
+    .far,
+    .fab,
+    span {
+        color: $charcoal;
+    }
+
+    span.icon i {
+        color: $charcoal;
+    }
+
+    &:hover {
+        background-color: $mauve !important;
+        color: $alabaster !important;
+        border-color: $mauve !important;
+
+        i,
+        .icon,
+        .fas,
+        .far,
+        .fab,
+        span {
+            color: $alabaster !important;
+        }
+
+        span.icon i {
+            color: $alabaster !important;
+        }
+    }
+}
+
+.switch-label::after {
+    top: 0.45rem !important;
+}
+
+.card-tabs {
+    .tabs {
+        ul {
+            .is-active {
+                a {
+                    span {
+                        color: $charcoal;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.has-background-charcoal {
+    background-color: $charcoal !important;
+}
+
+.has-background-dusty-rose {
+    background-color: $dusty-rose !important;
+}
+
+.has-background-mauve {
+    background-color: $mauve !important;
+}
+
+.has-background-sandstone {
+    background-color: $sandstone !important;
+}
+
+.has-background-porcelain {
+    background-color: $porcelain !important;
+}
+
+.has-background-alabaster {
+    background-color: $alabaster !important;
+}
+
+.has-text-charcoal {
+    color: $charcoal !important;
+}
+
+.has-text-dusty-rose {
+    color: $dusty-rose !important;
+}
+
+.has-text-mauve {
+    color: $mauve !important;
+}
+
+.has-text-sandstone {
+    color: $sandstone !important;
+}
+
+.has-text-porcelain {
+    color: $porcelain !important;
+}
+
+.has-text-alabaster {
+    color: $alabaster !important;
+}
+
+@media only screen and (min-width: 769px) {
+    .card-header-title-desktop {
+        display: block;
+    }
+
+    .card-header-title-mobile {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .card-header-title-desktop {
+        display: none;
+    }
+
+    .card-header-title-mobile {
+        display: block;
+    }
+}
+
+// Table Styles
+.table {
+    thead {
+        th {
+            font-family: $font-ivy-presto;
+            color: $charcoal;
+        }
+    }
+
+    tbody {
+        td {
+            font-family: $font-poppins-light;
+        }
+    }
+}
+
+.table-action.has-text-danger {
+    color: $mauve !important;
+    &:hover {
+        color: $mauve !important;
+    }
+}
+
+.table {
+    color: $charcoal;
+}
+
+// Icons and buttons on dusty rose backgrounds need to be visible
+.card-header {
+    background-color: $dusty-rose !important;
+
+    .card-header-title {
+        color: $charcoal !important;
+    }
+}
+
+// Navbar background
+.navbar {
+    background-color: $dusty-rose !important;
+}
+
+// Menu/Sidebar icons and text
+.menu {
+    .menu-label-icon,
+    .menu-label-text,
+    .menu-item-icon,
+    .menu-item-text {
+        color: $charcoal !important;
+    }
+}
+
+// Page background
+.page {
+    background-color: $alabaster;
+}
+
+// Breadcrumb styles
+.breadcrumb {
+    a {
+        color: $charcoal;
+
+        &:hover {
+            color: $mauve;
+        }
+    }
+
+    li.is-active a {
+        color: $charcoal;
+    }
+}
+// Input and form elements
+.input,
+.select select,
+.textarea {
+    font-family: $font-poppins-light;
+    color: $charcoal;
+}
+
+// Links
+a {
+    color: $mauve;
+    &:hover {
+        color: $mauve;
+    }
+}
+
+// Ensure all text uses Poppins Light by default (but not icons)
+body,
+p,
+span,
+div,
+td,
+th,
+label,
+input,
+select,
+textarea,
+button {
+    font-family: $font-poppins-light;
+}
+
+// Headings use Ivy Presto
+h1, h2, h3, h4, h5, h6,
+.title,
+.subtitle {
+    font-family: $font-ivy-presto;
+    color: $charcoal;
+}
+
+.pagination-link.is-current {
+    background-color: $dusty-rose !important;
+    border-color: $dusty-rose !important;
+    color: $alabaster !important;
+    &:hover {
+        background-color: $mauve !important;
+        border-color: $mauve !important;
+        color: $alabaster !important;
+    }
+}
+
+input[type="checkbox"] {
+    accent-color: $mauve;
+}
+input[type="radio"] {
+    accent-color: $mauve;
+}
+
+// File upload buttons - use mauve instead of blue
+.file.is-info .file-cta {
+    background-color: $mauve !important;
+    border-color: $mauve !important;
+    color: $alabaster !important;
+
+    .file-icon,
+    .file-label {
+        color: $alabaster !important;
+    }
+
+    i,
+    .icon,
+    .fas,
+    .far,
+    .fab {
+        color: $alabaster !important;
+    }
+
+    &:hover {
+        background-color: darken($mauve, 5%) !important;
+        border-color: darken($mauve, 5%) !important;
+        color: $alabaster !important;
+
+        .file-icon,
+        .file-label {
+            color: $alabaster !important;
+        }
+
+        i,
+        .icon,
+        .fas,
+        .far,
+        .fab {
+            color: $alabaster !important;
+        }
+    }
+}
+
+// Regular file buttons (without is-info) - also use mauve
+.file .file-cta {
+    background-color: $mauve !important;
+    border-color: $mauve !important;
+    color: $alabaster !important;
+
+    .file-icon,
+    .file-label {
+        color: $alabaster !important;
+    }
+
+    i,
+    .icon,
+    .fas,
+    .far,
+    .fab {
+        color: $alabaster !important;
+    }
+
+    &:hover {
+        background-color: darken($mauve, 5%) !important;
+        border-color: darken($mauve, 5%) !important;
+    }
+}
+
+.has-text-info-mauve {
+    color: $dusty-rose !important;
+    &:hover {
+        color: $mauve !important;
+    }
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.navbar {
+
+    // Couple info section styling
+    .couple-info {
+        white-space: normal !important;
+        flex-wrap: wrap;
+        max-width: 100%;
+        padding-right: 1rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        display: inline;
+
+        span {
+            display: inline;
+            line-height: 1.4;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+    }
+
+    // Search section styling
+    .search-section {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        .field {
+            margin-bottom: 0;
+            min-width: 150px;
+            padding-top: 0 !important;
+        }
+    }
+
+    // Navbar start section
+    .navbar-start {
+        flex-grow: 1;
+        flex-shrink: 1;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+
+        .navbar-item {
+            display: flex;
+            align-items: center;
+            padding-top: 0;
+            padding-bottom: 0;
+
+            a {
+                display: flex;
+                align-items: center;
+            }
+
+            img {
+                display: block;
+            }
+        }
+    }
+
+    // Mobile responsive - hide elements on mobile screens
+    @include mobile {
+
+        .couple-info,
+        .search-section {
+            display: none !important;
+        }
+    }
+}

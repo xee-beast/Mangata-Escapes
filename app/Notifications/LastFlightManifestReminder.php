@@ -1,0 +1,98 @@
+<?php
+
+namespace App\Notifications;
+
+use App\Models\BookingClient;
+use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Notifications\Notification;
+
+class LastFlightManifestReminder extends Notification implements ShouldQueue
+{
+    use Queueable;
+
+    protected $bookingClient;
+    protected $guestsWithoutManifests;
+
+    /**
+     * Create a new notification instance.
+     *
+     * @return void
+     */
+    public function __construct(BookingClient $bookingClient, $guestsWithoutManifests)
+    {
+        $this->bookingClient = $bookingClient;
+        $this->guestsWithoutManifests = $guestsWithoutManifests;
+    }
+
+    /**
+     * Get the notification's delivery channels.
+     *
+     * @param  mixed  $notifiable
+     * @return array
+     */
+    public function via($notifiable)
+    {
+        return ['mail'];
+    }
+
+    /**
+     * Get the mail representation of the notification.
+     *
+     * @param  mixed  $notifiable
+     * @return \Illuminate\Notifications\Messages\MailMessage
+     */
+    public function toMail($notifiable)
+    {
+        $guestNames = collect($this->guestsWithoutManifests)->map(function ($guest) {
+            return $guest->first_name . ' ' . $guest->last_name;
+        })->values()->all();
+
+        if (count($guestNames) === 1) {
+            $guestLine = "We have not received a flight itinerary for {$guestNames[0]}.";
+            $guestLine2 = "Airport transfers will not be scheduled for this guest.";
+        } elseif (count($guestNames) === 2) {
+            $guestLine = "We have not received a flight itinerary for {$guestNames[0]} and {$guestNames[1]}.";
+            $guestLine2 = "Airport transfers will not be scheduled for these guests.";
+        } else {
+            $lastGuest = array_pop($guestNames);
+            $guestLine = 'We have not received a flight itinerary for ' . implode(', ', $guestNames) . ', and ' . $lastGuest . '.';
+            $guestLine2 = 'Airport transfers will not be scheduled for these guests.';
+        }
+
+        $booking = $this->bookingClient->booking;
+        $group = $booking->group;
+
+        if ($group) {
+            $subject = "{$group->bride_last_name} & {$group->groom_last_name}";
+            $action = 'Go To ' . $group->name . '\'s Site';
+            $route = route('couples', ['group' => $group->slug]);
+        } else {
+            $subject = $booking->full_name;
+            $action = 'Go To Our Booking Site';
+            $route = route('individual-bookings.page');
+        }
+
+        return (new MailMessage)
+            ->subject("{$subject} {$this->bookingClient->reservation_code} - Transfers Couldn’t Be Scheduled")
+            ->greeting('Hello…')
+            ->line($guestLine)
+            ->line($guestLine2)
+            ->action($action, $route)
+            ->bcc(config('emails.bfb_transfers'));
+    }
+
+    /**
+     * Get the array representation of the notification.
+     *
+     * @param  mixed  $notifiable
+     * @return array
+     */
+    public function toArray($notifiable)
+    {
+        return [
+            //
+        ];
+    }
+}

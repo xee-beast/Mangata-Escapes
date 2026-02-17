@@ -1,0 +1,36 @@
+name: Stage
+
+on:
+  push:
+    branches: [ dev ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.1
+          tools: composer:v2
+          coverage: none
+      - name: Require Vapor CLI
+        run: composer global require laravel/vapor-cli
+      - name: Install Project Dependencies
+        run: composer install --no-interaction --prefer-dist --optimize-autoloader
+      - name: Downgrade Symfony console to avoid fatal errors
+        run: composer global require symfony/console:5.4.34
+      - name: Install cross-env
+        run: npm install --global cross-env
+      - name: Pull .env.staging
+        run: vapor env:pull staging
+        env:
+          VAPOR_API_TOKEN: ${{ secrets.VAPOR_API_TOKEN }}
+      - name: Disable Docker BuildKit
+        run: echo "DOCKER_BUILDKIT=0" >> $GITHUB_ENV
+      - name: Deploy Environment
+        run: vapor deploy staging --commit="${{ github.event.head_commit.id }}" --message="${{ github.event.head_commit.message }}"
+        env:
+          VAPOR_API_TOKEN: ${{ secrets.VAPOR_API_TOKEN }}

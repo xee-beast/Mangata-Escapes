@@ -1,0 +1,46 @@
+{
+    "cormorant": {
+        "300_italic": "\/Users\/sp\/Projects\/barefootbridal\/storage\/fonts\/cormorant_300_italic_d7920d0b06541e6068a20f62a30eed18",
+        "italic": "\/Users\/sp\/Projects\/barefootbridal\/storage\/fonts\/cormorant_italic_6f13f4bac619c4e3cbbc4a8e7109016a",
+        "500_italic": "\/Users\/sp\/Projects\/barefootbridal\/storage\/fonts\/cormorant_500_italic_1242a4a550f48e73a4bc94dd4314c9df",
+        "600_italic": "\/Users\/sp\/Projects\/barefootbridal\/storage\/fonts\/cormorant_600_italic_2005a97a3cc081cf1aaff40422d7fe8d",
+        "bold_italic": "\/Users\/sp\/Projects\/barefootbridal\/storage\/fonts\/cormorant_bold_italic_b27dc7133090ec3480fc19a07c96f837",
+        "300": "\/Users\/sp\/Projects\/barefootbridal\/storage\/fonts\/cormorant_300_526c6c02c5dc18f1de3902caa66c33b4",
+        "normal": "\/Users\/sp\/Projects\/barefootbridal\/storage\/fonts\/cormorant_normal_7f218adee031d83de46285ddbb11c55b",
+        "500": "\/Users\/sp\/Projects\/barefootbridal\/storage\/fonts\/cormorant_500_d93be9dd52ce967e8436b9c977521f4f",
+        "600": "\/Users\/sp\/Projects\/barefootbridal\/storage\/fonts\/cormorant_600_e962dbc68b45376fd9ce2b387d1f91a8",
+        "bold": "cormorant_bold_81e014d8698076d51a7eb9630adb53ef"
+    },
+    "montserrat": {
+        "100_italic": "\/Users\/sp\/Projects\/barefootbridal\/storage\/fonts\/montserrat_100_italic_2594abe70e4e16f091ad7926abd01597",
+        "200_italic": "\/Users\/sp\/Projects\/barefootbridal\/storage\/fonts\/montserrat_200_italic_b6e4309707e44dcf244af634c6ca353d",
+        "300_italic": "\/Users\/sp\/Projects\/barefootbridal\/storage\/fonts\/montserrat_300_italic_0555e86fe250647ea4bd4c825f27bf2e",
+        "italic": "\/Users\/sp\/Projects\/barefootbridal\/storage\/fonts\/montserrat_italic_5c93faf6b5ed72c0500358d3bc244413",
+        "500_italic": "\/Users\/sp\/Projects\/barefootbridal\/storage\/fonts\/montserrat_500_italic_c02f27d7f581d9ee5e567efb78c166b9",
+        "600_italic": "\/Users\/sp\/Projects\/barefootbridal\/storage\/fonts\/montserrat_600_italic_a37bd68e9fd3cfaf554879c868745701",
+        "bold_italic": "\/Users\/sp\/Projects\/barefootbridal\/storage\/fonts\/montserrat_bold_italic_99ff9c44c1d3f6f26e4012494421889d",
+        "800_italic": "\/Users\/sp\/Projects\/barefootbridal\/storage\/fonts\/montserrat_800_italic_afce6310560282a48d37544473fe258d",
+        "900_italic": "\/Users\/sp\/Projects\/barefootbridal\/storage\/fonts\/montserrat_900_italic_c8005239c828b6677e41e0ce6734ddf3",
+        "100": "\/Users\/sp\/Projects\/barefootbridal\/storage\/fonts\/montserrat_100_22a3f128b73ad075367b69939517633a",
+        "200": "\/Users\/sp\/Projects\/barefootbridal\/storage\/fonts\/montserrat_200_cdb1de9cad21d9b3cf8d2fb5ad54cec7",
+        "300": "\/Users\/sp\/Projects\/barefootbridal\/storage\/fonts\/montserrat_300_02d531d0f5215bf7732e2a46e1236eae",
+        "normal": "montserrat_normal_9c7c53c097b1c69619f2bae5d5edcf69",
+        "500": "\/Users\/sp\/Projects\/barefootbridal\/storage\/fonts\/montserrat_500_2da570d656c67ef7297f2b0b288ce8bc",
+        "600": "\/Users\/sp\/Projects\/barefootbridal\/storage\/fonts\/montserrat_600_da2f80af0e6d548904b08d3547b44b1c",
+        "bold": "\/Users\/sp\/Projects\/barefootbridal\/storage\/fonts\/montserrat_bold_251805f22f376c685d401bff71e8e1d4",
+        "800": "\/Users\/sp\/Projects\/barefootbridal\/storage\/fonts\/montserrat_800_31c76b37778ac09639512894e95dee8a",
+        "900": "\/Users\/zeeshantariq\/Documents\/WebApps\/barefootbridal-master\/storage\/fonts\/montserrat_900_5aa72c700a9156b5f6ef5ef0d10a5fbb"
+    },
+    "safiramarch": {
+        "normal": "safiramarch_normal_654ae0f2c339f29e5d40f5c64c72afcd"
+    },
+    "brittany": {
+        "normal": "brittany_normal_b628c7499bc841e82a1085374a55e3fe"
+    },
+    "josefin": {
+        "normal": "josefin_normal_db730f42c51625e20520b8c2c7493aa3"
+    },
+    "open": {
+        "normal": "open_normal_9615fe2fe2f34df649cbd91d5e27459e"
+    }
+}

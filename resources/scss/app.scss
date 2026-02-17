@@ -1,0 +1,67 @@
+// Variables
+@import "variables";
+// Icons
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+
+// Bulma
+@import "~bulma/sass/base/_all";
+@import "~bulma/sass/elements/button";
+@import "~bulma/sass/elements/container";
+@import "~bulma/sass/elements/content";
+@import "~bulma/sass/grid/columns";
+@import "~bulma/sass/layout/_all";
+
+html{
+    @include mobile{
+        font-size: 14px;
+    }
+}
+
+.container {
+    max-width: $desktop - $container-offset;
+    @include widescreen {
+        &.is-fluid {
+            max-width: $widescreen - $container-offset;
+            margin: 0 auto;
+        }
+    }
+}
+
+.has-background-image{
+    background-size: cover;
+    background-position: center;
+}
+
+.is-background-image{
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.is-underlined {
+    text-decoration: underline;
+}
+
+.is-striked {
+    text-decoration: line-through;
+}
+
+.button-left-margin {
+    margin-left: 0.5rem;
+}
+
+.line-height-2-25 {
+    line-height: 2.25 !important;
+}
+
+.width-86 {
+    width: 86% !important;
+}
+
+.airport-row {
+    background-color: whitesmoke;
+}

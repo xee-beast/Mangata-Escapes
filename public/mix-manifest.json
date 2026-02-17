@@ -1,0 +1,12 @@
+{
+    "/js/web/app.js": "/js/web/app.js",
+    "/js/dashboard/main.js": "/js/dashboard/main.js",
+    "/js/couples/app.js": "/js/couples/app.js",
+    "/js/bookings/app.js": "/js/bookings/app.js",
+    "/js/account/app.js": "/js/account/app.js",
+    "/js/dashboard/main.css": "/js/dashboard/main.css",
+    "/css/web/app.css": "/css/web/app.css",
+    "/css/dashboard.css": "/css/dashboard.css",
+    "/css/auth.css": "/css/auth.css",
+    "/css/app.css": "/css/app.css"
+}

@@ -1,0 +1,92 @@
+$family-sans-serif: "Montserrat", sans-serif;
+$primary: #C7979C; // Dusty Rose
+
+@import "~bulma/sass/utilities/initial-variables.sass";
+@import "~bulma/sass/utilities/functions.sass";
+@import "~bulma/sass/utilities/derived-variables.sass";
+@import "~bulma/sass/utilities/mixins.sass";
+@import "~bulma/sass/utilities/controls.sass";
+
+$body-font-size: 1.125rem;
+$body-weight: $weight-light;
+
+$secondary: #495057;
+
+// Brand Colors 
+$charcoal: #3C3B3B;
+$dusty-rose: #C7979C;
+$mauve: #995C64;
+$sandstone: #D5B9AE;
+$porcelain: #E7E0DA;
+$alabaster: #F7F5F4;
+
+$link-focus-border: $grey-light;
+
+// Button
+$button-focus-box-shadow-color: rgba($grey-light, 0.25);
+
+// Forms
+$input-focus-border-color: $grey-light;
+$input-focus-box-shadow-color: rgba($grey-light, 0.25);
+
+// Navbar
+$navbar-height: 3.25rem;
+$navbar-background-color: $dusty-rose;
+$navbar-item-color: $charcoal;
+$navbar-item-hover-color: $mauve;
+$navbar-item-hover-background-color: rgba($mauve, 0.1);
+$navbar-dropdown-background-color: $dusty-rose;
+$navbar-dropdown-border-top: 2px solid $secondary;
+$navbar-dropdown-arrow: $secondary;
+$navbar-dropdown-item-hover-background-color: rgba($mauve, 0.2);
+$navbar-breakpoint: $tablet;
+
+// Menu
+$menu-item-color: $primary;
+$menu-item-hover-color: $white;
+$menu-item-hover-background-color: $primary;
+$menu-item-active-color: $white;
+$menu-item-active-background-color: $primary;
+$menu-label-spacing: 0.5rem;
+$menu-width: $navbar-height;
+$menu-width-expanded: 15rem;
+$menu-item-active-hover-color: $grey-darker;
+
+// Card
+$card-header-background-color: $dusty-rose;
+
+// Modal
+$modal-background-background-color: rgba($black, 0.5);
+$modal-z: 100;
+
+// Tabs
+$tabs-link-active-color: $dusty-rose;
+$email-watermark-color: $dusty-rose;
+
+// Email Design Variables
+$email-bg-primary: $alabaster;
+$email-bg-secondary: $alabaster;
+$email-text-primary: $charcoal;
+$email-text-header: $mauve;
+$email-button-bg: $charcoal;
+$email-button-text: $alabaster;
+$email-border-color: $porcelain;
+$email-link-color: $mauve;
+$email-footer-bg: $alabaster;
+$email-font-header: 'Ivy Presto Display', serif;
+$email-font-body: 'Poppins', sans-serif;
+$email-header-font-size: 80px;
+$email-header-padding: 40px;
+$email-body-font-size: 16px;
+$email-body-line-height: 1.8;
+$email-content-padding: 50px;
+$email-button-padding-vertical: 18px;
+$email-button-padding-horizontal: 50px;
+$email-button-letter-spacing: 4px;
+$email-footer-logo-size: 100px;
+$email-footer-padding: 30px;
+
+// Dashboard Fonts
+$font-adore: 'Adore Calligraphy', serif;
+$font-ivy-presto: 'Ivypresto Display', serif;
+$font-poppins-light: 'Poppins Light', sans-serif;

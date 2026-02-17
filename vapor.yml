@@ -1,0 +1,51 @@
+id: 6460
+name: barefootbridal
+environments:
+    production:
+        memory: 1024
+        cli-memory: 512
+        separate-vendor: true
+        domain: '*.barefootbridal.com'
+        balancer: barefootbridal-balancer
+        database: barefootbridal
+        concurrency: 200
+        timeout: 60
+        queue-concurrency: 100
+        queue-timeout: 300
+        scheduler: true
+        runtime: docker
+        build:
+            - 'COMPOSER_MIRROR_PATH_REPOS=1 composer install --no-dev'
+            - 'php artisan event:cache'
+            - 'npm install' #This ensures package-lock.json is up-to-date
+            - 'cross-env ENV_FILE=.env.production npm ci && npm run prod && rm -rf node_modules'
+        deploy:
+            - 'php artisan queue:restart'
+            - 'php artisan migrate --force'
+            - 'php artisan config:clear'
+            - 'php artisan route:clear'
+            - 'php artisan view:clear'
+    staging:
+        memory: 1024
+        cli-memory: 512
+        separate-vendor: true
+        domain: '*.barefootbridal-staging.com'
+        balancer: barefootbridal-balancer
+        database: barefootbridal
+        concurrency: 200
+        timeout: 60
+        queue-concurrency: 100
+        queue-timeout: 300
+        scheduler: true
+        runtime: docker
+        build:
+            - 'COMPOSER_MIRROR_PATH_REPOS=1 composer install --no-dev'
+            - 'php artisan event:cache'
+            - 'npm install' #This ensures package-lock.json is up-to-date
+            - 'cross-env ENV_FILE=.env.staging npm ci && npm run dev && rm -rf node_modules'
+        deploy:
+            - 'php artisan queue:restart'
+            - 'php artisan migrate --force'
+            - 'php artisan config:clear'
+            - 'php artisan route:clear'
+            - 'php artisan view:clear'
