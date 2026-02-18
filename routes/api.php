@@ -161,7 +161,7 @@ Route::middleware('auth:api', '2fa')->group(function () {
         Route::post('/send-invoice', 'IndividualBookingController@sendInvoice')->name('individual-bookings.invoice.send');
         Route::post('/send-travel-documents', 'IndividualBookingController@sendTravelDocuments')->name('individual-bookings.travelDocuments.send');
 
-        Route::apiResource('clients', 'IndividualBookingClientController', ['parameters' => ['clients' => 'bookingClient']]);
+        Route::apiResource('clients', 'IndividualBookingClientController', ['parameters' => ['clients' => 'bookingClient'], 'names' => 'individual-bookings.clients']);
         Route::prefix('clients/{bookingClient}')->group(function() {
             Route::patch('/card', 'IndividualBookingClientController@updateCard');
             Route::patch('/extras', 'IndividualBookingClientController@syncExtras');
