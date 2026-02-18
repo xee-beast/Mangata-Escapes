@@ -17,6 +17,7 @@ const store = new Vuex.Store(data);
 Vue.use(Router);
 const router = new Router({
 	mode: "history",
+	base: typeof window !== "undefined" && window.DASHBOARD_BASE_PATH ? window.DASHBOARD_BASE_PATH : "/",
 	routes,
 	linkActiveClass: "is-active",
 	linkExactActiveClass: "is-active-exact"

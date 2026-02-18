@@ -30,7 +30,7 @@ class RoomThresholdNotification extends BaseNotification
 
     public function toMail()
     {
-        $dashLink = url(config('app.APP_DASHBOARD_URL') . '/groups/' . $this->group->id);
+        $dashLink = config('app.dashboard_url') . '/groups/' . $this->group->id;
 
         return (new MailMessage)
             ->subject("{$this->group->id_at_provider} - {$this->group->name} - Limited Inventory")

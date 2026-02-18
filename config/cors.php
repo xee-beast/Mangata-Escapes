@@ -19,7 +19,9 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*.' . parse_url(config('app.url'), PHP_URL_HOST)],
+    'allowed_origins' => [
+        parse_url(config('app.url'), PHP_URL_SCHEME) . '://' . parse_url(config('app.url'), PHP_URL_HOST),
+    ],
 
     'allowed_origins_patterns' => [],
 

@@ -9,6 +9,7 @@ Dashboard - {{ config('app.name', 'Barefootbridal') }}
 @endsection
 
 @section('scripts')
+<script>window.DASHBOARD_BASE_PATH = "{{ parse_url(config('app.dashboard_url'), PHP_URL_PATH) ?: '/dashboard' }}";</script>
 @if (app()->environment('local'))
 <script defer src="{{ mix('js/dashboard/main.js') }}"></script>
 @else

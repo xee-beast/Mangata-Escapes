@@ -8,6 +8,6 @@
  {
      public function redirectTo()
      {
-         return route('dashboard', ['uri' => '/']);
+         return route('dashboard', ['uri' => '']);
      }
  }
