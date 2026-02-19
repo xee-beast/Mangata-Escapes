@@ -5,7 +5,7 @@
 @endsection
 
 @section('title')
-Dashboard - {{ config('app.name', 'Barefootbridal') }}
+Dashboard - {{ config('app.name', 'Mangata Escapes') }}
 @endsection
 
 @section('scripts')
