@@ -66,4 +66,14 @@ return [
 
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Media Disk (for File/Image uploads)
+    |--------------------------------------------------------------------------
+    | When FILESYSTEM_DRIVER=local, media uses the public disk for web-accessible
+    | storage. When using S3, media uses the default disk.
+    |
+    */
+    'media_disk' => env('FILESYSTEM_DRIVER', 'local') === 'local' ? 'public' : null,
+
 ];

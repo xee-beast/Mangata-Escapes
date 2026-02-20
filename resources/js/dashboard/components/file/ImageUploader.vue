@@ -168,7 +168,7 @@ export default {
 				uploading: true
 			});
 
-			this.$vapor.store(image, {
+			this.$storage.store(image, {
 				visibility: 'public-read'
 			}).then(response => {
 				this.$set(this.images, this.images.findIndex(image => image.uploading), {

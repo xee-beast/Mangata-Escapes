@@ -24,6 +24,7 @@ Route::middleware('auth:api', '2fa')->group(function () {
     });
 
     Route::get('/dashboard', 'DashboardController@data')->name('app.dashboard');
+    Route::post('/local-storage-upload', 'LocalStorageUploadController@store')->name('local-storage.upload');
 
     Route::get('/results', 'ResultsController@index')->name('results');
 

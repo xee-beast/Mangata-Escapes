@@ -4,10 +4,12 @@ import moment from "moment";
 import Router from "vue-router";
 import routes from "./router/routes";
 import vapor from "laravel-vapor";
+import storage from "../storage";
 import Vue from "vue";
 import Vuex from "vuex";
 
 Vue.prototype.$vapor = vapor;
+Vue.prototype.$storage = storage;
 
 Vue.prototype.$moment = moment;
 Vue.prototype.$dashboardBase = typeof window !== "undefined" && window.DASHBOARD_BASE_PATH ? window.DASHBOARD_BASE_PATH : "/dashboard";

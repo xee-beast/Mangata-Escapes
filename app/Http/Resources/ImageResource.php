@@ -15,10 +15,11 @@ class ImageResource extends JsonResource
      */
     public function toArray($request)
     {
+        $disk = config('filesystems.media_disk') ?? config('filesystems.default');
         return [
             'uuid' => $this->id,
             'path' => $this->path,
-            'storagePath' => Storage::url($this->path),
+            'storagePath' => Storage::disk($disk)->url($this->path),
         ];
     }
 }

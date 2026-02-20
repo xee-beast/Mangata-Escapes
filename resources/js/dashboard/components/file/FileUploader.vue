@@ -165,7 +165,7 @@
 										uploading: true
 								});
 
-								this.$vapor.store(file, {visibility: 'public-read'}).then(response => {
+								this.$storage.store(file, {visibility: 'public-read'}).then(response => {
 										const uploadingIndex = this.files.findIndex(f => f.uploading);
 
 										if (uploadingIndex !== -1) {

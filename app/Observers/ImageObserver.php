@@ -7,6 +7,11 @@ use Illuminate\Support\Facades\Storage;
 
 class ImageObserver
 {
+    protected function disk()
+    {
+        return config('filesystems.media_disk') ?? config('filesystems.default');
+    }
+
     /**
      * Handle the image "created" event.
      *
@@ -15,8 +20,9 @@ class ImageObserver
      */
     public function created(Image $image)
     {
-        Storage::copy('tmp/' . $image->path, $image->path);
-        Storage::setVisibility($image->path, 'public');
+        $disk = $this->disk();
+        Storage::disk($disk)->copy('tmp/' . $image->path, $image->path);
+        Storage::disk($disk)->setVisibility($image->path, 'public');
     }
 
     /**
@@ -27,6 +33,7 @@ class ImageObserver
      */
     public function deleted(Image $image)
     {
-        Storage::delete($image->path);
+        $disk = $this->disk();
+        Storage::disk($disk)->delete($image->path);
     }
 }

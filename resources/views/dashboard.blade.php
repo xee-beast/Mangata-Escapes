@@ -9,7 +9,10 @@ Dashboard - {{ config('app.name', 'Mangata Escapes') }}
 @endsection
 
 @section('scripts')
-<script>window.DASHBOARD_BASE_PATH = "{{ parse_url(config('app.dashboard_url'), PHP_URL_PATH) ?: '/dashboard' }}";</script>
+<script>
+	window.DASHBOARD_BASE_PATH = "{{ parse_url(config('app.dashboard_url'), PHP_URL_PATH) ?: '/dashboard' }}";
+	window.MEDIA_STORAGE = "{{ config('filesystems.default') === 'local' ? 'local' : 's3' }}";
+</script>
 @if (app()->environment('local'))
 <script defer src="{{ mix('js/dashboard/main.js') }}"></script>
 @else

@@ -15,12 +15,13 @@ class FileResource extends JsonResource
      */
     public function toArray($request)
     {
+        $disk = config('filesystems.media_disk') ?? config('filesystems.default');
         return [
             'uuid' => $this->id,
             'name' => $this->name,
             'mime_type' => $this->mime_type,
             'path' => $this->path,
-            'storagePath' => Storage::url($this->path),
+            'storagePath' => Storage::disk($disk)->url($this->path),
         ];
     }
 }
