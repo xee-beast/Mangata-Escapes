@@ -28,7 +28,7 @@
 
                 <client-form v-model="invoice.booking" :error-bag="invoiceErrors" @codeLost="lostCode = true" />
 
-                <form v-if="!invoice.sendEmail" ref="form" :action="`/${group.slug}/invoice`" target="_blank" method="POST">
+                <form v-if="!invoice.sendEmail" ref="form" :action="`/couples/${group.slug}/invoice`" target="_blank" method="POST">
                     <input type="hidden" name="_token" :value="csrfToken">
                     <input type="hidden" name="booking[email]" :value="invoice.booking['email']">
                     <input type="hidden" name="booking[code]" :value="invoice.booking['code']">

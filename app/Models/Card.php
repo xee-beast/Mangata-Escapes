@@ -39,7 +39,7 @@ class Card extends Model
      */
     public function getNumberAttribute()
     {
-        return $this->attributes['number'];
+        return Crypt::decryptString($this->attributes['number']);
     }
 
     /**
@@ -91,7 +91,7 @@ class Card extends Model
      */
     public function getCodeAttribute()
     {
-        return $this->attributes['code'];
+        return Crypt::decryptString($this->attributes['code']);
     }
 
     /**

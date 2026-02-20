@@ -67,6 +67,14 @@ Route::prefix('bookings')->group(function () {
     Route::get('/terms-conditions/{individual_booking}', 'Bookings\PageController@termsConditions')->name('individual-bookings.termsConditions');
 });
 
+// Short URL support: /{group}/invoice and /{group}/quote-invoice (e.g. /maxwill/invoice)
+Route::post('/{group}/invoice', 'Couples\InvoiceController@streamInvoice')
+    ->middleware(['group', 'couples.password'])
+    ->where('group', '[a-zA-Z0-9_-]+');
+Route::post('/{group}/quote-invoice', 'Couples\FitQuoteController@streamQuoteInvoice')
+    ->middleware(['group', 'couples.password'])
+    ->where('group', '[a-zA-Z0-9_-]+');
+
 // Main
 Route::get('/', function () {
     // TODO: as we currently only cloning the barefootbridal.com website, we need to redirect to the dashboard url
@@ -85,5 +93,10 @@ Route::get('/contact', 'WebController@contact')->name('web.contact');
 Route::post('/contact/submit', 'WebController@submit')->name('newLead');
 
 Route::get('/{route}', function ($route) {
+    // Don't redirect if already in couples path - prevents redirect loop (e.g. GET /couples/maxwill/invoice
+    // has no matching route but would incorrectly redirect to /couples/couples/maxwill/invoice, then repeat)
+    if (str_starts_with($route, 'couples/')) {
+        abort(404);
+    }
     return redirect(config('app.group_url') . '/' . $route);
 })->where('route', '.*');
