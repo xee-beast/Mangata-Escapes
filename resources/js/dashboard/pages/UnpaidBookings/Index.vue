@@ -97,10 +97,10 @@
                     </td>
                     <td>
                         <template v-if="booking.group">
-                            <a v-if="!booking.group.deletedAt && (booking.can.view || booking.can.update)" class="table-action" :class="{'has-text-danger': booking.pendingChanges || booking.guestChanges.length > 0}" :href="`/groups/${booking.group.id}/bookings/${booking.id}`">
+                            <a v-if="!booking.group.deletedAt && (booking.can.view || booking.can.update)" class="table-action" :class="{'has-text-danger': booking.pendingChanges || booking.guestChanges.length > 0}" :href="`${$dashboardBase}/groups/${booking.group.id}/bookings/${booking.id}`">
                                 <i class="fas fa-info-circle"></i>
                             </a>
-                            <a v-if="!booking.group.deletedAt && (booking.can.view || booking.can.update)" class="table-action" :class="{'has-text-danger': booking.pendingChanges || booking.guestChanges.length > 0}" :href="`/groups/${booking.group.id}/bookings/${booking.id}`" target="_blank">
+                            <a v-if="!booking.group.deletedAt && (booking.can.view || booking.can.update)" class="table-action" :class="{'has-text-danger': booking.pendingChanges || booking.guestChanges.length > 0}" :href="`${$dashboardBase}/groups/${booking.group.id}/bookings/${booking.id}`" target="_blank">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                             <table-actions v-if="!booking.group.deletedAt" :has-notifications="booking.can.viewPayments && !!booking.pendingPayments">
@@ -128,10 +128,10 @@
                             </table-actions>
                         </template>
                         <template v-else>
-                            <a v-if="booking.can.view || booking.can.update" class="table-action" :class="{'has-text-danger': booking.pendingChanges}" :href="`/individual-bookings/${booking.id}`">
+                            <a v-if="booking.can.view || booking.can.update" class="table-action" :class="{'has-text-danger': booking.pendingChanges}" :href="`${$dashboardBase}/individual-bookings/${booking.id}`">
                                 <i class="fas fa-info-circle"></i>
                             </a>
-                            <a v-if="booking.can.view || booking.can.update" class="table-action" :class="{'has-text-danger': booking.pendingChanges}" :href="`/individual-bookings/${booking.id}`" target="_blank">
+                            <a v-if="booking.can.view || booking.can.update" class="table-action" :class="{'has-text-danger': booking.pendingChanges}" :href="`${$dashboardBase}/individual-bookings/${booking.id}`" target="_blank">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                             <table-actions :has-notifications="booking.can.viewPayments && !!booking.pendingPayments">

@@ -21,7 +21,7 @@
 				<span class="icon"><i class="fas fa-file-invoice"></i></span>
 				<span>Export Flight Manifests</span>
 			</a>
-      <a v-if="coupleBookingId" :href="`/groups/${group.id}/bookings/${coupleBookingId}`" target="_blank" class="button is-outlined is-primary is-inverted">
+			<a v-if="coupleBookingId" :href="`${$dashboardBase}/groups/${group.id}/bookings/${coupleBookingId}`" target="_blank" class="button is-outlined is-primary is-inverted">
         <span class="icon"><i class="fas fa-external-link-alt"></i></span>
         <span>B&G Booking</span>
       </a>
@@ -169,7 +169,7 @@
 							<a v-if="!group.deletedAt && (booking.can.view || booking.can.update)" class="table-action" :class="{'has-text-danger': booking.pendingChanges || booking.guestChanges.length > 0}" @click.prevent="show(booking.id)">
 								<i class="fas fa-info-circle"></i>
 							</a>
-							<a v-if="!group.deletedAt && (booking.can.view || booking.can.update)" class="table-action" :class="{'has-text-danger': booking.pendingChanges || booking.guestChanges.length > 0}" :href="`/groups/${group.id}/bookings/${booking.id}`" target="_blank">
+							<a v-if="!group.deletedAt && (booking.can.view || booking.can.update)" class="table-action" :class="{'has-text-danger': booking.pendingChanges || booking.guestChanges.length > 0}" :href="`${$dashboardBase}/groups/${group.id}/bookings/${booking.id}`" target="_blank">
 								<i class="fas fa-external-link-alt"></i>
 							</a>
 							<a v-if="!group.deletedAt && booking.can.confirm" class="table-action" @click.prevent="confirmBooking = {booking: booking, provider: group.provider}">

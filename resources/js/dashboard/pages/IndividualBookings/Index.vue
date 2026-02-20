@@ -132,7 +132,7 @@
 							<a v-if="(booking.can.view || booking.can.update)" class="table-action" :class="{'has-text-danger': booking.pendingChanges}" @click.prevent="show(booking.id)">
 								<i class="fas fa-info-circle"></i>
 							</a>
-							<a v-if="(booking.can.view || booking.can.update)" class="table-action" :class="{'has-text-danger': booking.pendingChanges}" :href="`/individual-bookings/${booking.id}`" target="_blank">
+							<a v-if="(booking.can.view || booking.can.update)" class="table-action" :class="{'has-text-danger': booking.pendingChanges}" :href="`${$dashboardBase}/individual-bookings/${booking.id}`" target="_blank">
 								<i class="fas fa-external-link-alt"></i>
 							</a>
 							<a v-if="booking.can.confirm" class="table-action" @click.prevent="confirmBooking = {booking: booking}">

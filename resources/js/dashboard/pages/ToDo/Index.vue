@@ -112,7 +112,7 @@
 									<a v-if="booking.can.view || booking.can.update" class="table-action" @click.prevent="show(booking.group.id, booking.id)">
 										<i class="fas fa-info-circle"></i>
 									</a>
-									<a v-if="booking.can.view || booking.can.update" class="table-action" :href="`/groups/${booking.group.id}/bookings/${booking.id}`" target="_blank">
+									<a v-if="booking.can.view || booking.can.update" class="table-action" :href="`${$dashboardBase}/groups/${booking.group.id}/bookings/${booking.id}`" target="_blank">
 										<i class="fas fa-external-link-alt"></i>
 									</a>
 								</template>
@@ -120,7 +120,7 @@
 									<a v-if="booking.can.view || booking.can.update" class="table-action" @click.prevent="show(null, booking.id)">
 										<i class="fas fa-info-circle"></i>
 									</a>
-									<a v-if="booking.can.view || booking.can.update" class="table-action" :href="`/individual-bookings/${booking.id}`" target="_blank">
+									<a v-if="booking.can.view || booking.can.update" class="table-action" :href="`${$dashboardBase}/individual-bookings/${booking.id}`" target="_blank">
 										<i class="fas fa-external-link-alt"></i>
 									</a>
 								</template>

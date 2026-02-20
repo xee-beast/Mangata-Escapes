@@ -12,12 +12,12 @@
 				</a>
 			</li>
 			<li>
-				<a :href="`/groups/${currentGroupId}/accommodations`" target="_blank" title="View Accommodations">
+				<a :href="`${$dashboardBase}/groups/${currentGroupId}/accommodations`" target="_blank" title="View Accommodations">
 					<i class="fas fa-door-open"></i>
 				</a>
 			</li>
 			<li class="has-badge">
-				<a :href="`/groups/${currentGroupId}/bookings`" target="_blank" title="View Bookings">
+				<a :href="`${$dashboardBase}/groups/${currentGroupId}/bookings`" target="_blank" title="View Bookings">
 					<i class="fas fa-book-open"></i>
 				</a>
 			</li>

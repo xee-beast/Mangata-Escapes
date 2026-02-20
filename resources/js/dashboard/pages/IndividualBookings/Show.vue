@@ -7,10 +7,10 @@
 			<a @click.prevent="redo" class="button is-outlined is-primary is-inverted" :style="!canRedo ? 'opacity: 0.5; cursor: not-allowed; pointer-events: none;' : ''">
 				<span class="icon"><i class="fas fa-redo"></i></span>
 			</a>
-			<a v-if="previousBooking" :href="`/individual-bookings/${previousBooking.id}`"	class="button is-outlined is-primary is-inverted">
+			<a v-if="previousBooking" :href="`${$dashboardBase}/individual-bookings/${previousBooking.id}`"	class="button is-outlined is-primary is-inverted">
 				<span class="icon"><i class="fas fa-arrow-left"></i></span>
 			</a>
-			<a v-if="nextBooking" :href="`/individual-bookings/${nextBooking.id}`"	class="button is-outlined is-primary is-inverted">
+			<a v-if="nextBooking" :href="`${$dashboardBase}/individual-bookings/${nextBooking.id}`"	class="button is-outlined is-primary is-inverted">
 				<span class="icon"><i class="fas fa-arrow-right"></i></span>
 			</a>
       <a :href="savedBooking.invoiceUrl" target="_blank" class="button is-outlined is-primary is-inverted">

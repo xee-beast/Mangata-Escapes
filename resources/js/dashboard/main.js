@@ -10,6 +10,7 @@ import Vuex from "vuex";
 Vue.prototype.$vapor = vapor;
 
 Vue.prototype.$moment = moment;
+Vue.prototype.$dashboardBase = typeof window !== "undefined" && window.DASHBOARD_BASE_PATH ? window.DASHBOARD_BASE_PATH : "/dashboard";
 
 Vue.use(Vuex);
 const store = new Vuex.Store(data);
